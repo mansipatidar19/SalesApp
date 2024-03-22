@@ -32,7 +32,7 @@ const register = async (req, res) => {
     });
     // Saving the user
     await newUser.save();
-    return res.status(200).json({ Message: "Registration Successful" });
+    return res.status(200).json({ Message: "Registration Successful",newUser });
   } catch (error) {
     console.error("Error occured while registration", error);
   }

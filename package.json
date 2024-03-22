@@ -2,7 +2,7 @@
     "name": "todo_app",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "index.js", 
     "scripts": {
         "install-backend": "cd backend && npm install",
         "start-backend": "cd backend && npm start",
