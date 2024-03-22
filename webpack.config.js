@@ -1,7 +1,1 @@
-module.exports = {
-  resolve: {
-    fallback: {
-      path: false,
-    },
-  },
-};
+    resolve.fallback: { "path": false },
