@@ -7,7 +7,7 @@ const {
   totalRevenue,
 } = require("../controllers/sales_controller");
  
-// Creating an instance of the Express router
+// Creating an instance of the Express router 
 const router = express.Router();
 
 // Defining routes for adding sales, retrieving top sales, and calculating total revenue

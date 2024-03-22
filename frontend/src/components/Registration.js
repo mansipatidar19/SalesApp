@@ -26,12 +26,22 @@ function Registration() {
       };
 
       // Sending POST request to register endpoint
-      await axios.post(`${REACT_APP_API_URL}api/user/register`, data);
+      const response = await axios.post(
+        `${REACT_APP_API_URL}api/user/register`,
+        data
+      );
       // Set loading state to false
       setLoading(false);
+      console.log(response);
+      toast.success(response.data.Message, {
+        position: "top-center",
+        autoClose: 1000,
+      });
 
-      // Redirecting to login page after successful registration
-      navigate("/login");
+      setTimeout(() => {
+        // Redirecting to login page after successful registration
+        navigate("/login");
+      }, 1500);
     } catch (error) {
       // Set loading state to false
       setLoading(false);

@@ -27,15 +27,6 @@ function App() {
 
         {/* Routing setup for different components */}
         <Routes>
-          {/* Route for registration */}
-          <Route path="/register" element={<Registration />}></Route>
-
-          {/* Default route for unauthenticated users */}
-          <Route path="/" element={<Registration />}></Route>
-
-          {/* Route for login */}
-          <Route path="/login" element={<Login />}></Route>
-
           {/* Conditional rendering based on token existence */}
           {token ? (
             <>
@@ -46,10 +37,18 @@ function App() {
             </>
           ) : (
             <>
-              {/* Route for displaying not found page for unauthenticated users */}
-              <Route path="*" element={<NotFound />} />
+              {/* Route for registration */}
+              <Route path="/register" element={<Registration />}></Route>
             </>
           )}
+          {/* Default route for unauthenticated users */}
+          <Route path="/" element={<Registration />}></Route>
+
+          {/* Route for login */}
+          <Route path="/login" element={<Login />}></Route>
+
+          {/* Route for displaying not found page for unauthenticated users */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </BrowserRouter>

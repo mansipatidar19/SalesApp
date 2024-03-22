@@ -33,12 +33,16 @@ function AddEntry() {
         }
       );
       // Display success message
-      toast.success(response.data.Message, {
-        autoClose: 200,
-      });
-      console.log(response);
       setLoading(false); // Set loading state to false
-      navigate("/topsales"); // Redirect to top sales page after successful submission
+      toast.success(response.data.Message, {
+        autoClose: 1000,
+        position: "top-center",
+      });
+
+      setTimeout(() => {
+        navigate("/topsales"); // Redirect to top sales page after successful submission
+      }, 1500);
+      
     } catch (error) {
       // Display error message
       toast.warn(error.response.data.Error);

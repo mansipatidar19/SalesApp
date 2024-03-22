@@ -23,6 +23,12 @@ function Login() {
         `${REACT_APP_API_URL}api/user/login`,
         user
       );
+
+      toast.success(response.data.Message, {
+        position: "top-center",
+        autoClose: 2000,
+      });
+
       // Storing token in sessionStorage and updating token state
       sessionStorage.setItem("token", JSON.stringify(response.data.token));
       setToken(JSON.parse(sessionStorage.getItem("token")));
@@ -30,12 +36,16 @@ function Login() {
       // Set loading state to false
       setLoading(false);
 
-      // Redirecting to addEntry page after successful login
-      navigate("/addEntry");
+      setTimeout(() => {
+        // Redirecting to addEntry page after successful login
+        navigate("/addEntry");
+      }, 2500);
     } catch (error) {
       // Set loading state to false
       setLoading(false);
-      toast.warn(error.response.data.Error);
+      toast.warn(error.response.data.Error, {
+        autoClose: 2000,
+      });
     }
   };
 

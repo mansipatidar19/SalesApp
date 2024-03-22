@@ -4,7 +4,7 @@ const cors = require("cors");
 const { PORT } = require("./config/env");
 const databaseConfig = require("./config/db");
 const userRouter = require("./routes/user_route");
-const salesRouter = require("./routes/sales_route");
+const salesRouter = require("./routes/sales_route"); 
 
 // Creating an instance of the Expres
 const app = express();
