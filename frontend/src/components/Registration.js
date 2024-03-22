@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { REACT_APP_API_URL } from "./config";
 
 function Registration() {
   // State variables for registration form fields and loading state
@@ -23,11 +24,9 @@ function Registration() {
         email,
         password,
       };
+
       // Sending POST request to register endpoint
-      await axios.post(
-        "http://localhost:8080/api/user/register",
-        data
-      );
+      await axios.post(`${REACT_APP_API_URL}api/user/register`, data);
       // Set loading state to false
       setLoading(false);
 

@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "./AuthProvider";
+import { REACT_APP_API_URL } from "./config";
 
 function Login() {
   // Accessing authentication token and setToken function from AuthContext
@@ -19,7 +20,7 @@ function Login() {
     try {
       // Sending POST request to login endpoint
       const response = await axios.post(
-        "http://localhost:8080/api/user/login",
+        `${REACT_APP_API_URL}api/user/login`,
         user
       );
       // Storing token in sessionStorage and updating token state

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./AuthProvider";
+import { REACT_APP_API_URL } from "./config";
 
 function Topsales() {
   // Accessing the authentication token from context
@@ -12,7 +13,7 @@ function Topsales() {
   // Function to fetch top sales data from the server
   const topSales = async () => {
     const topSalesData = await axios.get(
-      "http://localhost:8080/api/sales/topSales",
+      `${REACT_APP_API_URL}api/sales/topSales`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

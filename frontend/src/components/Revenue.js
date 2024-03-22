@@ -2,6 +2,7 @@ import axios from "axios";
 
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./AuthProvider";
+import { REACT_APP_API_URL } from "./config";
 
 function Revenue() {
   // State variable to hold the total revenue
@@ -13,7 +14,7 @@ function Revenue() {
   // Function to fetch total revenue from the server
   const getRevenue = async () => {
     const response = await axios.get(
-      "http://localhost:8080/api/sales/totalRevenue",
+      `${REACT_APP_API_URL}sales/totalRevenue`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

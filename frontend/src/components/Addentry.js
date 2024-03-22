@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "./AuthProvider";
+import { REACT_APP_API_URL } from "./config";
 
 function AddEntry() {
   // Accessing authentication token from AuthContext
@@ -23,7 +24,7 @@ function AddEntry() {
     try {
       // Sending POST request to add sales entry
       const response = await axios.post(
-        "http://localhost:8080/api/sales/addSales",
+        `${REACT_APP_API_URL}api/sales/addSales`,
         product,
         {
           headers: {
